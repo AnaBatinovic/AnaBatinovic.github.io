@@ -1,0 +1,2 @@
+I"-<p>Proposed multi-resolution frontier-based planner is a real-time capable exploration planner. The planner consists of the algorithm for detecting frontier points, followed by clustering of frontier points and selecting the best frontier point to be explored. Performance is achieved by not relying on data obtained directly from the 3D sensor, but on data obtained by a mapping algorithm. In order to cluster the frontier points, the properties of the Octree environment representation are used, which allows easy analysis with different resolutions.</p>
+:ET

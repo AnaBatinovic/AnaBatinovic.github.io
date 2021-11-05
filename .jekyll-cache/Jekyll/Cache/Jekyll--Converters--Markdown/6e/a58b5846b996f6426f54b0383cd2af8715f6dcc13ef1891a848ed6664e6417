@@ -1,0 +1,69 @@
+I"<p>Proposed multi-resolution frontier-based planner is a real-time capable exploration planner. The planner consists of the algorithm for detecting frontier points, followed by clustering of frontier points and selecting the best frontier point to be explored. Performance is achieved by not relying on data obtained directly from the 3D sensor, but on data obtained by a mapping algorithm. In order to cluster the frontier points, the properties of the Octree environment representation are used, which allows easy analysis with different resolutions.</p>
+
+<p><img src="https://www.youtube.com/watch?v=jiDi1lSX7EQ" alt="" /></p>
+
+<p>The repository for the implemented frontier-based strategy is available on <a href="https://github.com/larics/uav_frontier_exploration_3d">github</a>. If you use this code in a scholarly work, please cite our <a href="https://ieeexplore.ieee.org/document/9387089">journal paper</a>:</p>
+
+<blockquote>
+  <p><strong>A Multi-Resolution Frontier-Based Planner for Autonomous 3D Exploration</strong> <br />
+Ana Batinovic, Tamara Petrovic, Antun Ivanovic, Frano Petric and Stjepan Bogdan (IEEE Robotics and Automation Letters 2021)\</p>
+</blockquote>
+
+<blockquote>
+  <p>@ARTICLE{Batinovic-RAL-2021,
+  author={Batinovic, Ana and Petrovic, Tamara and Ivanovic, Antun and Petric, Frano and Bogdan, Stjepan},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={A Multi-Resolution Frontier-Based Planner for Autonomous 3D Exploration}, 
+  year={2021},
+  volume={6},
+  number={3},
+  pages={4528-4535},
+  doi={10.1109/LRA.2021.3068923}}</p>
+</blockquote>
+
+<p>The frontier-based exploration planner is capable of autonomously exploring a previously unknown area, creating an occupancy grid map using Cartographer SLAM and generating an OctoMap. The planner does not require any prior knowledge of the environment, except for boundaries of the area to be explored. The planner may be applied to both indoor and outdoor environments.</p>
+
+<p>It ensures frontiers detection, clustering and selection of the best frontier (a new target point). In each iteration, map and OctoMap are updated. Frontiers are clustered and a new target point is selected only when the prevoius target is reached. A robust frontier detection speeds up the exploration process, while a clustering algorithm ensures target evaluation in the real time.</p>
+
+<p>The best frontier point to be visited is determined by estimating the benefit of the information gathered by visiting a candidate frontier point. The exploration loop is closed with an autonomous navigation to the selected frontier point, using the map generated through the exploration for trajectory planning and localization. Furthermore, the planner maintains a occupancy map of the environment. This guarantees that paths are only planned within free space, while giving a notion on exploration progress.</p>
+
+<h2 id="installation-instructions">Installation Instructions</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+  <li>This package is tested on <a href="http://old-releases.ubuntu.com/releases/18.04.3/">Ubuntu 18.04</a>, it is assumed you have it installed.</li>
+  <li>This package requires the installation of <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">ROS Melodic</a> (tested). Refer to the <a href="http://wiki.ros.org/ROS/Tutorials">ROS tutorials</a> for further information.</li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+
+<p>Detailed installation instructions to close the loop with the frontier-based exploration planner includes:</p>
+<ul>
+  <li><strong>Gazebo simulation of Ardupilot/PX4 UAV platform</strong></li>
+  <li><strong>Cartographer SLAM</strong></li>
+  <li><strong>Path planning and navigation</strong></li>
+  <li><strong>Frontier-based exploration planner</strong></li>
+</ul>
+
+<p>Please refer to <a href="https://github.com/larics/uav_frontier_exploration_3d/wiki/Installation-Instructions">Installation Instructions on Github Wiki</a> to install Gazebo simulation of Ardupilot/PX4 UAV platform, Cartographer SLAM, path planning and navigation module and frontier-based exploration planner.</p>
+
+<h2 id="exploration-in-progress">Exploration in progress</h2>
+<p>During an unknown area exploration, the frontier-based planner publishes data on a number of topics. The ROS package RViz is used in order to visualize map, voxels (free and occupied) and paths.</p>
+
+<p>Frontier points are marked red, candidates (clustered points) are yellow while the best frontier voxel is marked pink. The UAV planned a path (green) to the best frontier voxel (target point). OctoMap of the environment is updated in each iteration.</p>
+
+<p>The house environment in both Gazebo simulator and RViz:</p>
+
+<p><img src="/assets/images/approach_1/house_exp1.png" alt="" /></p>
+<p><img src="/assets/images/approach_1/house_exp2.png" alt="" /></p>
+<p><img src="/assets/images/approach_1/house_exp3.png" alt="" /></p>
+<p><img src="/assets/images/approach_1/house_exp4.png" alt="" /></p>
+<p><img src="/assets/images/approach_1/house_exp5.png" alt="" /></p>
+<p><img src="/assets/images/approach_1/house_octomap.png" alt="" /></p>
+
+<h2 id="results">Results</h2>
+
+<h2 id="credits">Credits</h2>
+
+<p>The exploration algorithm was developed by <a href="mailto:ana.batinovic@fer.hr">Ana Batinovic</a> with the help and support of the members of the <a href="https://larics.fer.hr/">LARICS</a>.</p>
+:ET

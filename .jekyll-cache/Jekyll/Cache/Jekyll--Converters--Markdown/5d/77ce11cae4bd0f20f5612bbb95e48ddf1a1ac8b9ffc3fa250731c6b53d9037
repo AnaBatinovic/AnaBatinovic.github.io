@@ -1,0 +1,41 @@
+I"á<h3 id="todo">TODO</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Deadline</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Simulation debug</td>
+      <td>-</td>
+      <td>15/11/2021</td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td>Experiments Borongaj</td>
+      <td>-</td>
+      <td>15/11/2021</td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td>Semantic related work</td>
+      <td>-</td>
+      <td>15/11/2021</td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td>Website</td>
+      <td>-</td>
+      <td>15/11/2021</td>
+      <td>In progress</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="semantic-exploration">Semantic exploration</h2>
+:ET

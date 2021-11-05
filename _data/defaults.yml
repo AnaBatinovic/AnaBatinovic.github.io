@@ -1,4 +1,4 @@
 home:
-  heading: "Your awesome heading"
-  subheading: "Your awesome subheading"
-  banner: "Your image url"
+  heading: "Autonomous 3D Exploration"
+  subheading: "This page describes different approaches for the autonomous exploration and mapping, one of the fundamental tasks of robotics."
+  banner: "https://anabatinovic.github.io/"
